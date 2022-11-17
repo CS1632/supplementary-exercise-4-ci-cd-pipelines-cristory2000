@@ -100,7 +100,9 @@ public class Cat {
 
 	public boolean getRented() {
 		if (bugInjectionOn) {
+			
 			throw new UnsupportedOperationException("Injected bug for getRented()");
+			
 		}
 		return rented;
 	}
