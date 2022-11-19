@@ -44,7 +44,7 @@ public class RentACatTest {
 		// 3. Create an unrented Cat with ID 2 and name "Old Deuteronomy", assign to c2
 		// TODO: Fill in
 		c2=Mockito.mock(Cat.class);
-		//Mockito.when(c2.getId()).thenReturn(2);
+		Mockito.when(c2.getId()).thenReturn(2);
 		Mockito.when(c2.getName()).thenReturn("Old Deuteronomy");
 		
 		// 4. Create an unrented Cat with ID 3 and name "Mistoffelees", assign to c3
@@ -277,29 +277,25 @@ public class RentACatTest {
 
 	@Test
 	public void testRentCatFailureNumCats3() {
-		// TODO
+		// TODOc
 
 		r.addCat(c1);
 		r.addCat(c2);
 		r.addCat(c3);
 
-		r.rentCat(2);
 		
 		Mockito.when(c2.getRented()).thenReturn(true);
+		r.rentCat(2);
 
-
-
-		
 		assertFalse("Returns True",r.rentCat(2));
-		
+
 		Mockito.verify(c1,Mockito.times(0)).rentCat();
 		Mockito.verify(c2,Mockito.times(0)).rentCat();
 		Mockito.verify(c3,Mockito.times(0)).rentCat();
-
-
 		
 
 	}
+
 
 	/**
 	 * Test case for boolean returnCat(int id).
@@ -318,7 +314,6 @@ public class RentACatTest {
 		
 	}
 
-	
 	/**
 	 * Test case for boolean returnCat(int id).
 	 * 
@@ -336,9 +331,8 @@ public class RentACatTest {
 	 * testBadgerPlayCalled method.
 	 */
 
-
 	@Test
-	public void testReturnCatNumCats3() { 
+	public void testReturnCatNumCats3() {
 		// TODO
 		
 		r.addCat(c1);

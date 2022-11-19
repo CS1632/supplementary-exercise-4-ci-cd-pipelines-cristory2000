@@ -26,9 +26,7 @@ public class RentACatImpl implements RentACat {
 				x.returnCat();
 				return true;
 			}
-			
 		}
-		
 		return false;
 	}
 
@@ -49,14 +47,11 @@ public class RentACatImpl implements RentACat {
 		{
 			if ((x.getId() == id) && (!x.getRented())) 
 			{
-				
 				x.rentCat();
-
 				return true;
 
 			}
 		}
-		
 		return false;
 	}
 
@@ -77,7 +72,7 @@ public class RentACatImpl implements RentACat {
 		{
 			
 			if (!x.getRented())
-				
+				//System.out.println(34809238);
 				list += x.toString() + "\n";
 		}
 		return list;
